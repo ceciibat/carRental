@@ -1,0 +1,15 @@
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\bin\Debug\net7.0\Course.exe
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\bin\Debug\net7.0\Course.deps.json
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\bin\Debug\net7.0\Course.runtimeconfig.json
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\bin\Debug\net7.0\Course.dll
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\bin\Debug\net7.0\Course.pdb
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.csproj.AssemblyReference.cache
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.AssemblyInfoInputs.cache
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.AssemblyInfo.cs
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.csproj.CoreCompileInputs.cache
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.dll
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\refint\Course.dll
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.pdb
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\Course.genruntimeconfig.cache
+C:\Users\ana.batalha\Documents\Tempvs\Projetos\Course\obj\Debug\net7.0\ref\Course.dll
