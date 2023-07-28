@@ -7,12 +7,13 @@ namespace Course_Assembly.Services
         public double PricePerHour { get; private set; }                            // private = restrição de acesso aos valores
         public double PricePerDay { get; private set; }
 
-        private BrazilTaxService _brazilTaxService = new BrazilTaxService();       // criando uma dependência / não é a melhor forma de fazer!! está sem interface
+        private ITaxService _taxService;                                            // tirar a instanciação de sua dependencia e apenas receber e atribuir se chama = inversão de controle por meio de injeção de dependência.
 
-        public RentalService(double pricePerHour, double pricePerDay)
+        public RentalService(double pricePerHour, double pricePerDay, ITaxService taxService)
         {
             PricePerHour = pricePerHour;
             PricePerDay = pricePerDay;
+            _taxService = taxService;
         }
 
         public void ProcessInvoice(CarRental carRental)     // processamento da fatura      // implementar a operação p/ processar um carRental e gerar a nota de pagamento dele // invoice = fatura
@@ -29,7 +30,7 @@ namespace Course_Assembly.Services
                 basicPayment = PricePerDay * Math.Ceiling(duration.TotalDays);
             }
 
-            double tax = _brazilTaxService.Tax(basicPayment);
+            double tax = _taxService.Tax(basicPayment);
 
             carRental.Invoice = new Invoice(basicPayment, tax);                             // pronto. isso é processar o invoice
         }

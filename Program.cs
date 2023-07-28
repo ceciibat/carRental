@@ -24,7 +24,9 @@ namespace Course
 
             CarRental carRental = new CarRental(start, finish, new Vehicle(model));
 
-            RentalService rentalService = new RentalService(hour, day);
+            // instanciando um serviço de aluguel, já passando pra ele a dependencia q deve ter: a classe concreta BrazilTaxService(),
+            // esse obj BrazilTaxService() vai casar com o ITaxService do construtor da classe RentalService por meio de UpCasting
+            RentalService rentalService = new RentalService(hour, day, new BrazilTaxService());
 
             rentalService.ProcessInvoice(carRental);
 
