@@ -630,6 +630,7 @@ namespace Course.Exemplos
 
 //-----------------------------------------------------------------------------
 
+//// Interface IComparable e seu método CompareTo
 
 //string path = @"C:\Temp\in.txt";                      // informando um caminho hardcode (direto no programa)
 
@@ -654,4 +655,57 @@ namespace Course.Exemplos
 //{
 //    Console.WriteLine("An error occurred");
 //    Console.WriteLine(e.Message);
+//}
+
+//-------------------------------------------------------------------------------
+
+        //string path = @"C:\Temp\in.txt";                      // informando um caminho hardcode (direto no programa)
+
+        //try
+        //{
+        //    using (StreamReader sr = File.OpenText(path))       // abrindo o arquivo usando o StreamReader
+        //    {
+        //        List<Employee> list = new List<Employee>();        
+        //        while (!sr.EndOfStream)                       
+        //        {
+        //            list.Add(new Employee(sr.ReadLine()));        // aqui o construtor já converte p/ funcionario             
+        //        }
+
+        //        list.Sort();                                      // o método .Sort() faz uso da interface IComparable
+        //        foreach (Employee emp in list)
+        //        {
+        //            Console.WriteLine(emp);               
+        //        }
+        //    }
+        //}
+        //catch (IOException e)
+        //{
+        //    Console.WriteLine("An error occurred");
+        //    Console.WriteLine(e.Message);
+        //}
+
+////-------------classe funcionario
+
+    //internal class Employee : IComparable
+    //{
+    //    public string Name { get; set; }
+    //    public double Salary { get; set; }
+
+    //    public Employee(string csvEmployee)             // aqui o construtor já inicia o funcionario do tipo csv
+    //    {
+    //        string[] vect = csvEmployee.Split(',');
+    //        Name = vect[0];
+    //        Salary = double.Parse(vect[1], CultureInfo.InvariantCulture);
+    //    }
+
+    //    public override string ToString()
+    //    {
+    //        return Name + ", " + Salary.ToString("f2", CultureInfo.InvariantCulture);
+    //    }
+
+    //    public int CompareTo(object? obj)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
+
 //}
