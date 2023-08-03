@@ -709,3 +709,16 @@ namespace Course.Exemplos
     //    }
 
 //}
+
+////-------------classe funcionario - UPDATE CompareTo
+
+        //public int CompareTo(object? obj)
+        //{
+        //    if(!(obj is Employee))
+        //    {
+        //        throw new ArgumentException("Comparing error: argument is not a Employee");
+        //    }
+        //    Employee other = obj as Employee;
+
+        //    return Salary.CompareTo(other.Salary);
+        //}
