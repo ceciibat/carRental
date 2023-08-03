@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ana.batalha\\Documents\\Tempvs\\Projetos\\Course\\Course_Assembly.csproj",
+      "projectUniqueName": "C:\\Users\\ana.batalha\\Documents\\Tempvs\\Projetos\\CourseG\\Course_Assembly.csproj",
       "projectName": "Course_Assembly",
-      "projectPath": "C:\\Users\\ana.batalha\\Documents\\Tempvs\\Projetos\\Course\\Course_Assembly.csproj",
+      "projectPath": "C:\\Users\\ana.batalha\\Documents\\Tempvs\\Projetos\\CourseG\\Course_Assembly.csproj",
       "packagesPath": "C:\\Users\\ana.batalha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ana.batalha\\Documents\\Tempvs\\Projetos\\Course\\obj\\",
+      "outputPath": "C:\\Users\\ana.batalha\\Documents\\Tempvs\\Projetos\\CourseG\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

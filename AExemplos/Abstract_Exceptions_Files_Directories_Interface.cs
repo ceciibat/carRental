@@ -1,15 +1,8 @@
-﻿//using Course.Entities;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Course.Exemplos
 {
-    internal class Abstract_Exceptions_Files_Directories
+    internal class Abstract_Exceptions_Files_Directories_Interface
     {
     }
 }
@@ -628,6 +621,34 @@ namespace Course.Exemplos
 //    Console.WriteLine(sourceFolderPath);
 //    Console.WriteLine(targetFolderPath);
 //    Console.WriteLine(targetFilePath);
+//}
+//catch (IOException e)
+//{
+//    Console.WriteLine("An error occurred");
+//    Console.WriteLine(e.Message);
+//}
+
+//-----------------------------------------------------------------------------
+
+
+//string path = @"C:\Temp\in.txt";                      // informando um caminho hardcode (direto no programa)
+
+//try
+//{
+//    using (StreamReader sr = File.OpenText(path))       // abrindo o arquivo usando o StreamReader
+//    {
+//        List<string> list = new List<string>();        // cria uma lista
+//        while (!sr.EndOfStream)                       // enquanto não for o final do arquivo eu vou:
+//        {
+//            list.Add(sr.ReadLine());                 // adicionar à lista * o que a variável sr ler no arquivo | * a linha q eu ler nesse arquivo
+//        }
+
+//        list.Sort();                                // assim ordena a lista
+//        foreach (string str in list)
+//        {
+//            Console.WriteLine(str);               // *mostra
+//        }
+//    }
 //}
 //catch (IOException e)
 //{

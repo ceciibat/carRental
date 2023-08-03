@@ -2,7 +2,7 @@
 
 namespace Course_Assembly.Entities
 {
-    internal class Invoice
+    internal class Invoice    // fatura
     {
         public double BasicPayment { get; set; }
         public double Tax { get; set; }
