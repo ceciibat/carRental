@@ -112,6 +112,19 @@ namespace Course_Assembly.AExemplos
 
 //// CONJUNTOS - COLEÇÕES GENÉRICAS-----------09/08/2023
 
+//// HashSet<T>----------------
+//HashSet<string> set = new HashSet<string>();
+
+//set.Add("TV");
+//set.Add("Notebook");
+//set.Add("Tablet");
+//Console.WriteLine(set.Contains("comp"));
+
+//foreach (string p in set)
+//{
+//    Console.WriteLine(p);
+//}
+
 //// SortedSet<T>---------------
 //// main
 //static void Main(string[] args)
