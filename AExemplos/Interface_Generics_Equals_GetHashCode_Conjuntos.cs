@@ -165,3 +165,96 @@ namespace Course_Assembly.AExemplos
 
 //-----------------------------------------------------------------
 
+////Como as coleções Hash testam igualdade?????????????????????????
+
+            //// SE GetHashCode e Equalsestiverem implementados:
+
+            //HashSet<string> set = new HashSet<string>();          
+
+            //set.Add("maria");
+            //set.Add("alex");
+
+            //// a função Contains vai primeiro testar o GetHashCode do "maria" de baixo, aí se dentro do conj. set tiver um elemento indexado por esse hashCode,
+            //// ele vai e usa o Equals para confirmar que realmente o elemento está lá. e dessa eu tenho a answer se esse elemento pertence ao HashSet.
+            //// resultado dará = True
+            //// MAS isso PORQUE a classe STRING que é o TIPO do HashSet<string> set, possui a >implementação< do GetHashCode e Equals.
+
+            //Console.WriteLine(set.Contains("maria"));
+
+//------------como comparam igualdade??
+// Program main
+//HashSet<Product> a = new HashSet<Product>();
+
+//a.Add(new Product("TV", 900.0));
+//a.Add(new Product("Notebook", 1200.0));
+//// criamos um conjunto a com 2 produtos dentro dele
+
+//HashSet<Point> b = new HashSet<Point>();
+
+//b.Add(new Point(3, 4));
+//b.Add(new Point(5, 10));
+
+//Product prod = new Product("Notebook", 1200.0);
+//Console.WriteLine(a.Contains(prod));               // aí o coontainnnsss vai usar o gethashcode e equals
+//// ^^
+//// || sem implementação do gethashcode e equals, ele compara pela referencia. (o que dava falso)
+//// com implementação ele vai comparar primeiro pelo hashCode e, se for igual, ele testa no Equals se o nome e o preço são iguais
+//// agora, para o HashSet, este prod está contido no conjunto 'a'
+
+
+//Point p = new Point(5, 10);
+//Console.WriteLine(b.Contains(p));
+//// quando o tipo é struct ele vai comparar por conteúdo, não por referência
+
+//CLASS PRODUCT---------------
+
+    //class Product          // tipo referencia
+    //{
+    //    public string Name { get; set; }
+    //    public double Price { get; set; }
+    //    public Product(string name, double price)
+    //    {
+    //        Name = name;
+    //        Price = price;
+    //    }
+
+    //    public override int GetHashCode()                       
+    //    {
+    //        // vamos considerar que pra um produto ser igual a outro pelo hashcode, tem que bater o hashcode do nome e o hashcode do preço
+
+    //        return Name.GetHashCode() + Price.GetHashCode();        // soma dos 2 hashcode p/ o equals confirmar (muito coincidentemente essa soma pode dar igual)          
+    //    }
+
+    //    public override bool Equals(object? obj)             
+    //    {
+    //        // quando que um Product será igual a outro Product?
+
+    //        if (!(obj is Product))                                // programação defensiva p/ testar se esse obj é um Product
+    //        {
+    //            return false; 
+    //            //poderia ser tbm uma exceção
+    //        }
+
+    //        // r = quando eles forem iguais tanto no Name quanto no Price
+
+    //        Product other = obj as Product;
+    //        //ou: Product other = (Product)obj; = cast explicito
+
+    //        return Name.Equals(other.Name) && Price.Equals(other.Price);
+
+    //     // = o Name do Product que eu estou .Equals(o Name do outro) EE o Price do Product que eu tô .Equals(o Price do outro)
+    //    }
+    //}
+
+//STRUCT POINT------------------
+
+    //struct Point   // tipo valor
+    //{
+    //    public int X { get; set; }
+    //    public int Y { get; set; }
+    //    public Point(int x, int y) : this()
+    //    {
+    //        X = x;
+    //        Y = y;
+    //    }
+    //}
