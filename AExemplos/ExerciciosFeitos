@@ -1,0 +1,45 @@
+//// EXERCÍCIO PROPOSTO SOBRE CONJUNTOS  
+
+////criação do conjunto A
+//HashSet<int> A = new HashSet<int>();
+
+//Console.Write("How many students for course A? ");
+//int n = int.Parse(Console.ReadLine());
+
+//for (int i = 1; i <= n; i++)
+//{
+//    int idStudents = int.Parse(Console.ReadLine());
+//    A.Add(idStudents);
+//}
+
+////criação do conjunto B
+//HashSet<int> B = new HashSet<int>();
+
+//Console.Write("How many students for course B? ");
+//int n1 = int.Parse(Console.ReadLine());
+
+//for (int i = 1; i <= n1; i++)
+//{
+//    int idStudents = int.Parse(Console.ReadLine());
+//    B.Add(idStudents);
+//}
+
+////criação do conjunto C
+//HashSet<int> C = new HashSet<int>();
+
+//Console.Write("How many students for course C? ");
+//int n2 = int.Parse(Console.ReadLine());
+
+//for (int i = 1; i <= n2; i++)
+//{
+//    int idStudents = int.Parse(Console.ReadLine());
+//    C.Add(idStudents);
+//}
+
+//A.UnionWith(B);
+//A.UnionWith(C);
+
+//Console.WriteLine("Total students: " + A.Count);
+//// Considerações: fiz alone, mas tive q consultar macoratti pra lembrar sobre juntar mais de 2 conjuntos, 
+//// e vi que é easy demaise, ele tipo "acumula" no conjunto que vc coloca primeiro. Exemplo dos A B C acima. :) 
+//// (obs: neste dia (11/08/2023) passei a tarde quase toda estudando sobre GetHashCode e Equals). obrigada
