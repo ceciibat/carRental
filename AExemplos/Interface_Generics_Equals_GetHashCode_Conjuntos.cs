@@ -181,7 +181,7 @@ namespace Course_Assembly.AExemplos
 
             //Console.WriteLine(set.Contains("maria"));
 
-//------------como comparam igualdade??
+////------------como comparam igualdade??
 // Program main
 //HashSet<Product> a = new HashSet<Product>();
 
@@ -206,7 +206,7 @@ namespace Course_Assembly.AExemplos
 //Console.WriteLine(b.Contains(p));
 //// quando o tipo é struct ele vai comparar por conteúdo, não por referência
 
-//CLASS PRODUCT---------------
+////CLASS PRODUCT---------------
 
     //class Product          // tipo referencia
     //{
@@ -222,7 +222,8 @@ namespace Course_Assembly.AExemplos
     //    {
     //        // vamos considerar que pra um produto ser igual a outro pelo hashcode, tem que bater o hashcode do nome e o hashcode do preço
 
-    //        return Name.GetHashCode() + Price.GetHashCode();        // soma dos 2 hashcode p/ o equals confirmar (muito coincidentemente essa soma pode dar igual)          
+    //        return Name.GetHashCode() + Price.GetHashCode();        // soma dos 2 hashcode p/ o equals confirmar (muito coincidentemente essa soma pode dar igual)     
+           // return HashCode.Combine(Name, Price);                   // outra forma de juntar os hashcodes :))) tenkiu macoratti
     //    }
 
     //    public override bool Equals(object? obj)             
@@ -246,7 +247,7 @@ namespace Course_Assembly.AExemplos
     //    }
     //}
 
-//STRUCT POINT------------------
+////STRUCT POINT------------------
 
     //struct Point   // tipo valor
     //{
@@ -258,3 +259,58 @@ namespace Course_Assembly.AExemplos
     //        Y = y;
     //    }
     //}
+
+//// EXERCÍCIO RESOLVIDO SOBRE CONJUNTOS---------------
+
+////PROGRAM MAIN
+//HashSet<LogRecord> set = new HashSet<LogRecord>();      // hashSet pois esse exercicio não se importa com a ordem
+
+//Console.Write("Enter file full path: ");
+//string path = Console.ReadLine();
+
+//try  // tente usar enquanto
+//{
+//    using (StreamReader sr = File.OpenText(path))
+//    {
+//        while (!sr.EndOfStream)
+//        {
+//            string[] line = sr.ReadLine().Split(' ');
+//            string name = line[0];
+//            DateTime instant = DateTime.Parse(line[1]);
+//            set.Add(new LogRecord { Username = name, Instant = instant });
+//            // se tentar entrar 1 logrecord de 1 usuario repetido, ele não entra. pois implementamos o HashCode e Equals baseado no Username
+//        }
+//        Console.WriteLine("Total users: " + set.Count);    // count me dá o tamanho do conjunto
+//    }
+//}
+//catch (IOException e)
+//{
+//    Console.WriteLine(e.Message);
+//}
+
+////CLASS LOGRECORD LogRecord - Registro de Log
+
+//public string Username { get; set; }
+//public DateTime Instant { get; set; }
+
+//public override int GetHashCode()                    // ele me dá um código hash da classe, que nesse caso será apenas o do user
+//{
+//    return HashCode.Combine(Username, Instant);      // forma que macoratti ensinou
+//   //return Username.GetHashCode();
+//   // hashcode do registro de log, por enquanto apenas do string username, nosso único critério de igualdade
+//}
+
+//public override bool Equals(object? obj)
+//{
+//    if (!(obj is LogRecord))
+//    {
+//        return false;
+//    }
+
+//    LogRecord other = (LogRecord)obj;              // isso aq é cast explicito
+//    return Username.Equals(other.Username);
+
+//    // na implementação Object.Equals(), ele compara a igualdade analisando a REFERENCIA (em caso de reference type)
+//    // o que não faz tanto sentido no dia a dia do desenvolvedor, por isso a importância de sobrescrever! - sobrecarga - override
+//    // aplicar o que realmente será útil!
+//}
