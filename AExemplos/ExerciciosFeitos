@@ -43,3 +43,62 @@
 //// Considerações: fiz alone, mas tive q consultar macoratti pra lembrar sobre juntar mais de 2 conjuntos, 
 //// e vi que é easy demaise, ele tipo "acumula" no conjunto que vc coloca primeiro. Exemplo dos A B C acima. :) 
 //// (obs: neste dia (11/08/2023) passei a tarde quase toda estudando sobre GetHashCode e Equals). obrigada
+
+//// OUTRA MANEIRA DE FAZER
+//// aqui tem a classe para os registros e se cria apenas 1 conjunto
+
+////PROGRAM MAIN
+//HashSet<Registration> registrations = new HashSet<Registration>();
+
+//Console.Write("How many students for course A? ");
+//int students = int.Parse(Console.ReadLine());
+
+//for (int i = 0; i < students; i++)
+//{
+//    int idStudents = int.Parse(Console.ReadLine());
+//    registrations.Add(new Registration(idStudents));
+//}
+
+//Console.Write("How many students for course B? ");
+//students = int.Parse(Console.ReadLine());
+
+//for (int i = 0; i < students; i++)
+//{
+//    int idStudents = int.Parse(Console.ReadLine());
+//    registrations.Add(new Registration(idStudents));
+//}
+
+//Console.Write("How many students for course C? ");
+//students = int.Parse(Console.ReadLine());
+
+//for (int i = 0; i < students; i++)
+//{
+//    int idStudents = int.Parse(Console.ReadLine());
+//    registrations.Add(new Registration(idStudents));
+//}
+
+//Console.Write($"\nTotal students: {registrations.Count}");
+
+////CLASSE REGISTRATION
+
+//public int Id { get; set; }
+
+//public Registration(int id)
+//{
+//    Id = id;
+//}
+
+//public override int GetHashCode()
+//{
+//    return Id.GetHashCode();
+//}
+
+//public override bool Equals(object? obj)
+//{
+//    if (!(obj is Registration))
+//    { return false; }
+//    Registration other = (Registration)obj;
+//    return Id.Equals(other.Id);
+//}
+// aqui eu tbm faço gethashcode do Registration e preparo o equals pra comparar
+    
