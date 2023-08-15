@@ -314,3 +314,145 @@ namespace Course_Assembly.AExemplos
 //    // o que não faz tanto sentido no dia a dia do desenvolvedor, por isso a importância de sobrescrever! - sobrecarga - override
 //    // aplicar o que realmente será útil!
 //}
+
+//// DICTIONARY EXEMPLOS - MACORATTI -----------------------------DICTIONARY
+
+//Dictionary<int, int> dic1 = new Dictionary<int, int>();
+//var dic2 = new Dictionary<int, int>();
+
+//dic2.Add(2, 100);
+//dic2.Add(4, 400);
+//dic2.Add(3, 300);
+
+//var dic3 = new Dictionary<int, int>()
+//            {
+//                {1,100 },
+//                {2,200 },
+//                {3,300 }
+//            };
+
+//Console.WriteLine("\n-Incluir elemento com chave(3) duplicada");
+//try
+//{
+//    dic3.Add(3, 333);
+//}
+//catch (Exception e)
+//{
+//    Console.WriteLine(e.Message);
+//    Console.WriteLine(e.ToString());
+//}
+
+//Console.WriteLine("\n-Usando o método TryAdd para a chave 3");
+//var resultado = dic3.TryAdd(3, 333);                                        // retorna true ou false
+//Console.WriteLine("Elemento foi incluido? " + resultado);
+
+//// se NÃO contém um elemento c/ a chave '7', adiciona um elemento com chave 7 e valor 7000 na coleção
+//Console.WriteLine("\n-Incluindo o elemento com chave 7 e valor 7000");
+//if (!dic3.ContainsKey(7))
+//{
+//    dic3.Add(7, 7000);
+//}
+//Console.WriteLine(dic3[7]);                                               // acessando o elemento pela chave exibindo o seu valor
+
+//Console.WriteLine("\n-Usando ContainsValue");
+//if (dic3.ContainsValue(7000))
+//{
+//    Console.WriteLine("O valor existe no Dicionário");
+//}
+
+//Console.WriteLine("\n-Alterando o valor do elemento com chave 7");
+//Console.WriteLine("Valor atual do item " + dic3[7]);
+//if (dic3.ContainsKey(7))
+//{
+//    dic3[7] = 7777;
+//    Console.WriteLine("Valor alterado do item " + dic3[7]);
+//}
+
+//Console.WriteLine("\n-Tentando obter elemento com chave(5) inexistente");
+
+//try
+//{
+//    Console.WriteLine(dic3[5]);
+//}
+//catch (Exception e)
+//{
+//    Console.WriteLine(e.Message);
+//    Console.WriteLine(e.ToString());
+//    // KeyNotFoundException
+//}
+
+//Console.WriteLine("\n-Usando TryGetValue() para a chave 5");
+
+//if (dic3.TryGetValue(7, out int valor))
+//{
+//    Console.WriteLine("Valor para a chave 5 = " + valor);
+//}
+//else
+//{
+//    Console.WriteLine("Chave não encontrada");
+//}
+
+//dic3.Add(6, 6666);
+//dic3.Add(4, 4444);
+
+//Console.WriteLine("\n-Percorrendo o dicionário e exibindo os itens (foreach) ");
+
+//foreach (var item in dic3)
+//{
+//    Console.WriteLine($"{item.Key} {item.Value}");
+//}
+
+//Console.WriteLine("\n-Ordenando os elementos do dicionário(SortedDictionary/LINQ) ");
+
+////var dic3Ordenado = new SortedDictionary<int, int>(dic3);
+//var dic3Ordenado = dic3.OrderBy(x => x.Key);
+
+//foreach (var item in dic3Ordenado)
+//{
+//    Console.WriteLine($"{item.Key} {item.Value}");
+//}
+
+//// DICTIONARY EXEMPLOS PROF NÉLIO - UDEMY ---------- DICTIONARY
+
+//Dictionary<string, string> cookies = new Dictionary<string, string>();
+
+//cookies["user"] = "maria";
+//cookies["email"] = "maria@gmail.com";
+//cookies["phone"] = "99712234";
+//cookies["phone"] = "99712235";
+
+//Console.WriteLine(cookies["user"]);
+//Console.WriteLine(cookies["email"]);
+//Console.WriteLine(cookies["phone"]);
+
+//cookies.Remove("email");
+//Console.WriteLine("\n-Removeu a chave 'email', agora faz o ContainsKey pra ver se contém ou false");
+//if (cookies.ContainsKey("email"))
+//{
+//    Console.WriteLine(cookies["email"]);
+//}
+//else
+//{ Console.WriteLine("there is no 'email' key"); }
+
+//Console.WriteLine("\n-Conferindo o tamanho do Dictionary");
+//Console.WriteLine("Size: " + cookies.Count);
+//Console.WriteLine("\n-ALL COOKIES: ");
+
+//Console.WriteLine("\n1ª forma");
+//foreach (var item in cookies)
+//{
+//    Console.WriteLine($"{item.Key}: {item.Value}");      // interpolação              
+//}
+
+//Console.WriteLine("\n2ª forma");
+//foreach (KeyValuePair<string, string> item in cookies)
+//{
+//    Console.WriteLine(item.Key + ": " + item.Value);    // concatenação
+//}
+
+//Console.WriteLine("\n3ª forma");
+//foreach (var item in cookies)    // ou KeyValuePair (after: obs: o KeyValuePair já vem de "fábrica" rs)
+//{
+//    Console.WriteLine("{0}: {1}", item.Key, item.Value);
+//}
+//Console.WriteLine("\nNo fim, CW's diferentes mas resultados iguais");
