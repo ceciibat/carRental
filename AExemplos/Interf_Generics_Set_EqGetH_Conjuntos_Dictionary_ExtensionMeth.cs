@@ -456,3 +456,58 @@ namespace Course_Assembly.AExemplos
 //    Console.WriteLine("{0}: {1}", item.Key, item.Value);
 //}
 //Console.WriteLine("\nNo fim, CW's diferentes mas resultados iguais");
+
+
+//// EXEMPLOS DE EXTENSION METHODS        16/08/2023 17:03:??
+
+//// MAIN DATETIME
+
+//public class ProcessFile
+//{
+//    static void Main(string[] args)
+//    {
+//        DateTime dt = new DateTime(2023, 08, 16, 14, 00, 1);
+//        Console.WriteLine(dt.ElapsedTime());
+//    }
+//}
+
+//// CLASSE ESTÁTICA DATETIMEEXTENSIONS
+
+//static class DateTimeExtensions
+//{
+//    public static string ElapsedTime(this DateTime thisObj)       // esse parâmetro é uma referência para o >próprio< objeto, neste caso, o 'dt'
+//    {
+//        TimeSpan duration = DateTime.Now - thisObj;
+
+//        if (duration.TotalHours < 24.0)
+//        {
+//            return duration.TotalHours.ToString("f1", CultureInfo.InvariantCulture) + "hours";
+//        }
+//        else
+//        {
+//            return duration.TotalDays.ToString("f1", CultureInfo.InvariantCulture) + "days";
+//        }
+//    }
+//}
+
+//// MAIN STRING 17:12:??
+
+//string s1 = "Good morning dear students!";
+//Console.WriteLine(s1.Cut(10));
+
+//// CLASSE ESTATICA STRINGEXTENSIONS
+
+//static class StringExtensions
+//{
+//    public static string Cut(this string objetoQSeraUsado, int count)
+//    {
+//        if (objetoQSeraUsado.Length <= count)
+//        {
+//            return objetoQSeraUsado;
+//        }
+//        else
+//        {
+//            return objetoQSeraUsado.Substring(0, count) + "...";
+//        }
+//    }
+//}
