@@ -1,0 +1,26 @@
+// Aqui começa a Seção 17, sobre Expressões Lambda, Delegate e LINQ
+
+//// Uma experiência com Comparison
+
+//string fruta1 = "laranja";
+//string fruta2 = "banana";
+//string fruta3 = "abacate";
+
+//List<string> list = new List<string>
+//        {
+//            fruta1,
+//            fruta2,
+//            fruta3
+//        };
+
+//// 1 maneira  - eixpressão lambda
+//// Comparison<string> compr = (frutaX, frutaY) => frutaX.ToUpper().CompareTo(frutaY.ToUpper());
+//// list.Sort(compr);
+
+//// outra maneira 
+//list.Sort((frutaX, frutaY) => frutaX.ToUpper().CompareTo(frutaY.ToUpper()));
+
+//foreach (string s in list)
+//{
+//    Console.WriteLine(s);
+//}
