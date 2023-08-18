@@ -24,3 +24,46 @@
 //{
 //    Console.WriteLine(s);
 //}
+
+//// INTRODUÇÃO A DELEGATES    18/08/2023
+
+//// PROGRAM MAIN
+//delegate double BinaryNumericOperation(double n1, double n2);   // declaração do delegate
+//class Program
+//{
+//    static void Main(string[] args)
+//    {
+//        double a = 50;
+//        double b = 12;
+
+//        // BinaryNumericOperation op = new BinaryNumericOperation(CalculationService.Sum);  <= sintaxe alternativa
+//        BinaryNumericOperation op = CalculationService.Sum;
+//        // o objeto delegate op é uma referencia para a função sum
+
+//        // double result = op.Invoke(a, b);   <= sintaxe alternativa
+//        double result = op(a, b);
+//        Console.WriteLine(result);
+//    }
+//}
+
+//// CLASSE CALCULATIONSERVICE
+
+class CalculationService
+    {
+        public static void ShowMax(double x, double y)
+        {
+            double max = (x > y) ? x : y;
+            Console.WriteLine(max);
+        }
+        public static void ShowSum(double x, double y)
+        {
+            double sum = x + y;
+            Console.WriteLine(sum);
+        }
+    }
+//// Multicast Delegate
+
+BinaryNumericOperation op = CalculationService.ShowSum;
+op += CalculationService.ShowMax;
+// agora o meu delegate guarda referencia para 2 funções
+op(a, b);
