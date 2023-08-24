@@ -142,3 +142,34 @@
 //    Console.WriteLine("An error occured!");
 //    Console.WriteLine(e.Message);
 //}
+
+//// EXERCÍCIO COMPOSTO SOBRE LINQ + EXPRESSÕES LAMBDA ------------ LINQ & LAMBDA 24/08/2023
+
+        Console.Write("Enter full file path: ");
+        string path = Console.ReadLine();
+
+        List<Product> list = new List<Product>();
+
+            using(StreamReader sr = File.OpenText(path))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string[] fields = sr.ReadLine().Split(',');
+                    string name = fields[0];
+                    double price = double.Parse(fields[1], CultureInfo.InvariantCulture);
+
+                    list.Add(new Product(name, price));
+                }
+            }
+
+            var avg = list.Select(p => p.Price).DefaultIfEmpty(0.0).Average(); // se a lista for vazia ele coloca o valor zero
+            Console.WriteLine("Average price: " + avg.ToString("f2", CultureInfo.InvariantCulture));
+
+            var names = list
+                .Where(p => p.Price < avg)        /* pega os produtos c/ preço menor do que média*/
+                .OrderByDescending(p => p.Name)   /* ordena por nome (decrescente) = cba */
+                .Select(p => p.Name);             /* pega/seleciona somente o nome do objeto*/
+            foreach(var name in names)
+            {
+                Console.WriteLine(name);
+            }
